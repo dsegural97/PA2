@@ -1,0 +1,371 @@
+/* ==========================================================================
+   1. RESET Y BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+body.blog {
+  padding-top: 120px;
+}
+
+/* ==========================================================================
+   2. ESTILOS PORTADA (index.html)
+   ========================================================================== */
+.hero {
+  background: url("img/Fifty_Coffees.jpg") center center/cover no-repeat;
+  height: 30pc;
+  position: relative;
+}
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero h1 {
+  font-size: clamp(6rem, 12vw, 10rem);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.8rem;
+  line-height: 1;
+  margin-bottom: 0.2em;
+  color: #745a5a;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.hero .main-menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5em;
+}
+.hero .main-menu a {
+  padding: 0.5rem 1rem;
+  color: #f6f7f4;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.hero .main-menu a:hover {
+  color: #f0c040;
+}
+.subtitle {
+  max-width: 600px;
+  margin: 0 auto 1.5em;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #f7f2f2;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+.social-icons a:hover {
+  color: #f0c040;
+}
+
+/* ==========================================================================
+   3. ESTILOS BLOG (blog.html)
+   ========================================================================== */
+/* Header fijo del sitio */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+}
+.site-header h1 {
+  font-style: italic;
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+  color: #0e0d0d;
+  margin-bottom: 0.5rem;
+}
+.site-header .main-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.site-header .main-menu a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding-bottom: 0.2rem;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+.site-header .main-menu a:hover,
+.site-header .main-menu a.active {
+  color: #b15b5b;
+  border-bottom: 2px solid #b15b5b;
+}
+
+/* Imagen principal del post */
+.cover-image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Contenedor del artículo */
+.post {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* 3.1 Cabecera del post: título centrado + autor a la derecha */
+.post-header {
+  position: relative;
+  text-align: center; /* centra el h2 */
+  margin-bottom: 1rem;
+}
+.post-header h2 {
+  display: inline-block; /* para centrar solo el ancho del texto */
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+.post-meta {
+  position: absolute;
+  top: 50%;
+  right: 1rem; /* mueve la foto más a la derecha */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.author-info {
+  text-align: center;
+}
+.author-info .name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.author-info .role {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* 3.2 Intro: fecha + primera línea */
+.intro {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* 3.3 Párrafo con icono flotado */
+.float-icon {
+  float: left;
+  width: 120px;
+  margin: 0 1rem 1rem 0;
+}
+
+/* Footer del post */
+.post-footer {
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+.post-footer p {
+  margin-bottom: 0.5rem;
+}
+.post-footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.post-footer .social-icons a {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.2s;
+}
+.post-footer .social-icons a:hover {
+  color: #b15b5b;
+}
+
+/* ==========================================================================
+   4. MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .post-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .float-icon {
+    float: none;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+  .intro {
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   5. ESTILOS GALERÍA (galeria.html — <body class="gallery">)
+   ========================================================================== */
+
+/* Ajuste del padding para el header fijo */
+body.gallery {
+  padding-top: 120px;
+}
+
+/* Contenedor de la cuadrícula */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Cada item de la galería */
+.gallery-item {
+  flex: 1 1 calc(33.333% - 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Imagen con filtro gris y transición */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Al pasar el ratón, se quita el filtro */
+.gallery-item img:hover {
+  filter: grayscale(0%);
+}
+
+/* Pie de foto */
+.caption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+  text-align: center;
+}
+
+/* Footer de la galería */
+.gallery-footer {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.gallery-footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.gallery-footer .social-icons a {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.gallery-footer .social-icons a:hover {
+  color: #b15b5b;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE (Galería)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .gallery-item {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    flex: 1 1 100%;
+  }
+}
+
+/* ==========================================================================
+   7. ESTILOS VIDEOS (videos.html — <body class="videos">)
+   ========================================================================== */
+body.videos {
+  padding-top: 120px;
+}
+
+.post {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Video responsive */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  margin-bottom: 1.5rem;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Intro de videos */
+.post h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: #666;
+}
